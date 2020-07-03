@@ -1,9 +1,14 @@
-# Arcadia
-
-> Pagina SENNOVA ARCADIA 
+# My personal website
 
 ## Build Setup
 
+# description
+# english
+i make this page to learn how to use Vue with Nuxt, u can use it to do a landing page quickly
+# spanish
+Yo hice esta pagina para aprender como usar Vue con Nuxt, tu puedes usarlo para hacer una landing page rapidamente
+# Link page
+https://angelarchboldweb.now.sh/
 ``` bash
 # install dependencies
 $ npm run install
