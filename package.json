@@ -1,0 +1,21 @@
+{
+  "name": "personalweba-angelarchbold",
+  "version": "1.0.0",
+  "description": "Angel Archbold, pagina personal. ",
+  "author": "Archbold_Angel",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "vuetify": "^2.1.6"
+  },
+  "devDependencies": {
+    "@mdi/font": "^4.5.95",
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}
