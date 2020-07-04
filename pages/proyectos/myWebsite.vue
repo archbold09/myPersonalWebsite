@@ -10,15 +10,14 @@
       <div class="row text-center">
 
         <div class="col-md-6 mb-3 pt-4">
-            <h1 class="font-weight-bold textoGris text-left"> Horarios CNCA </h1>
+            <h1 class="font-weight-bold textoGris text-left"> Archbold Website </h1>
             <p class="title font-weight-medium textoGris2 text-left">
-                Horarios CNCA es una aplicación web, desarrollada y diseñada para instructores, aprendices y funcionarios del SENA.
-                Permite la creacion, edición y visualización de los horarios que la funcionaria encargada genere.
+               Mi portafolio web, creado para subir la evidencia de mi trabajo, información y tecnologías que manejo.
             </p>
         </div>
 
         <div class="col-md-6 mb-8">
-            <img src="~/assets/images/portafolio/horario/imagen1.png" class="img-fluid rounded">
+            <img src="~/assets/images/portafolio/angelWeb/myWebsite.png" class="img-fluid rounded">
         </div>
 
       </div>
@@ -26,68 +25,16 @@
     </div>
 
     <section style="background-color:white;">
-        <div class="container mt-8 mb-8">
-
-            <div class="row text-center">
-
-                <div class="col-md-6 mb-8">
-                    <img src="~/assets/images/portafolio/horario/imagen2.png" class="img-fluid rounded">
-                </div>
-
-                <div class="col-md-6 mb-3 ">
-                    <h1 class="title font-weight-bold textoGris text-left"> ¿Cómo funciona? </h1>
-                    <p class="body-2 font-weight-medium textoGris2 text-left">Existen 4 roles en el Software, administrador, aprendiz, funcionario e instructor. Cada uno con diferentes permisos:</p>
-                    <h4 class="subtitle-2 font-weight-bold textoGris text-left"> Administrador </h4>
-                    <p class="body-2 font-weight-medium textoGris2 text-left">El administrador tiene acceso a todas las funciones del Software y da permisos a los diferentes roles.</p>
-                    <h4 class="subtitle-2 font-weight-bold textoGris text-left"> Instructor </h4>
-                    <p class="body-2 font-weight-medium textoGris2 text-left">El instructor puede ver un informe que muestra el horario, el ambiente de clases y las fichas asignadas a su clase.</p>
-                    <h4 class="subtitle-2 font-weight-bold textoGris text-left"> Aprendiz </h4>
-                    <p class="body-2 font-weight-medium textoGris2 text-left">El aprendiz puede ver un informe que muestra, horario de clase, ficha y su ambiente de clase.</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="container mt-8 mb-8">
+        <div class="container">
           <div class="row text-center">
-            <div class="col-md-6 mb-8">
-                <img src="~/assets/images/portafolio/horario/imagen3.png" class="img-fluid rounded">
-            </div>
-
-            <div class="col-md-6 mb-3 ">
-              <h1 class="display-1 font-weight-bold textoGris text-left"> Inicio de sesión </h1>
-              <v-divider color="#00c58e" width="150"></v-divider>
-              <p class="title font-weight-medium textoGris2 text-left">
-                  Formulario de login, para los intructores, funcionarios y administrador. Con validación de contraseña, usuario. Con mensajes de error y de exito
+            <div class="col-md-12">
+              <p class="title font-weight-medium textoGris2">
+                <v-icon color="#00c58e" size="40">mdi mdi-github</v-icon> 
+                <a href="https://github.com/archbold09/myPersonalWebsite">https://github.com/archbold09/myPersonalWebsite</a>
               </p>
             </div>
           </div>
         </div>
-
-        <div class="container mt-8 mb-8">
-          <div class="row text-center">
-
-            <div class="col-md-6 mb-8">
-              <img src="~/assets/images/portafolio/horario/imagen4.png" class="img-fluid rounded img-thumbnail">
-            </div>
-
-            <div class="col-md-6 mb-8">
-              <img src="~/assets/images/portafolio/horario/imagen5.png" class="img-fluid rounded img-thumbnail">
-            </div>
-
-            <div class="col-md-6 mb-8">
-              <img src="~/assets/images/portafolio/horario/imagen6.png" class="img-fluid rounded img-thumbnail">
-            </div>
-
-            <div class="col-md-6 mb-8">
-              <img src="~/assets/images/portafolio/horario/imagen7.png" class="img-fluid rounded img-thumbnail">
-            </div>
-
-          </div>
-        </div>
-
     </section>
 
     <div class="container mt-8">
@@ -113,7 +60,7 @@
       <div class="row text-center">
 
           <div class="col-md-6 mb-3 ">
-              <h1 class="font-weight-bold textoGris text-left"> Tecnologías usada </h1>
+              <h1 class="font-weight-bold textoGris text-left"> Tecnología usada </h1>
               <v-divider width="200" color="#00C78F"></v-divider>
           </div>
 
@@ -127,11 +74,6 @@
                               </v-avatar>
                           </v-card>
                       </v-slide-item>
-                      <v-card class="ma-4 text-center" height="100" width="100" hover>
-                          <v-avatar size="95" tile>
-                          <img src="~/assets/images/sobreMi/mysql.png" class="img-fluid">
-                          </v-avatar>
-                      </v-card>
                   </v-slide-group>
               </v-sheet>
           </div>
@@ -168,14 +110,6 @@ export default {
       //lenguajes de programacion
         backEnd: [
 
-          {
-            icono:'mdi mdi-language-php',
-            colorIcono:'#787CB4',
-            valor:'90',
-            valor2:'90%',
-            colorValor:'#787CB4'
-          },
-
           { 
           icono:'mdi mdi-vuejs',
             colorIcono:'#3FB37F',
@@ -209,7 +143,7 @@ export default {
           },
 
           { 
-          icono:'mdi mdi-jquery',
+          icono:'mdi mdi-nuxt',
             colorIcono:'#32ABEA',
             valor:'90',
             valor2:'90%',
@@ -249,7 +183,7 @@ export default {
             to: '../portafolio',
           },
           {
-            text: 'Horario CNCA',
+            text: 'My Website',
             disabled: true,
           }
         ]

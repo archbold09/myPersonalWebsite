@@ -58,14 +58,15 @@
             <v-list-item three-line>
               <v-list-item-content>
                 <v-list-item-title class="font-weight-bold subtitle-1 textoGris">Número celular</v-list-item-title>
-                <v-list-item-subtitle># 3124484922 - 3187931717 </v-list-item-subtitle>
+                <v-list-item-subtitle class="font-weight-bold"># 3124484922 - 3187931717 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
 
             <v-list-item three-line>
               <v-list-item-content>
                 <v-list-item-title class="font-weight-bold subtitle-1 textoGris">Correo</v-list-item-title>
-                <v-list-item-subtitle>angelArchbold09@gmail.com - ajtorres647@misena.edu.co</v-list-item-subtitle>
+                <v-list-item-subtitle class="font-weight-bold">angelArchbold09@gmail.com</v-list-item-subtitle>
+                <v-list-item-subtitle class="font-weight-bold">ajtorres647@misena.edu.co</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
 
@@ -109,7 +110,7 @@
                         Linkedin
                       </v-btn>
                     </template>
-                    <span>Ver Facebook</span>
+                    <span>Ver Linkedin</span>
                   </v-tooltip>
                 </v-list-item-subtitle>
               </v-list-item-content>
