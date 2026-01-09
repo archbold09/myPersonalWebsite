@@ -10,11 +10,9 @@ export const personal: PersonalInfo = {
     e-commerce y soluciones empresariales.`,
   emails: [
     'angelarchbold09@gmail.com',
-    'ajtorres647@misena.edu.co'
   ],
   phones: [
-    '3124484922',
-    '3187931717'
+    '3124484922'
   ],
   social: {
     github: 'https://github.com/archbold09',

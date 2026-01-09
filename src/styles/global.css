@@ -2,22 +2,22 @@
 
 /* Custom theme configuration */
 @theme {
-  /* Primary color palette - Purple/Pink/Blue */
-  --color-primary-50: #faf5ff;
-  --color-primary-100: #f3e8ff;
-  --color-primary-200: #e9d5ff;
-  --color-primary-300: #d8b4fe;
-  --color-primary-400: #c084fc;
-  --color-primary-500: #a855f7;
-  --color-primary-600: #9333ea;
-  --color-primary-700: #7c3aed;
-  --color-primary-800: #6b21a8;
-  --color-primary-900: #581c87;
+  /* Primary color palette - Emerald Green (matching logo) */
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-200: #a7f3d0;
+  --color-primary-300: #6ee7b7;
+  --color-primary-400: #34d399;
+  --color-primary-500: #00c58e;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-800: #065f46;
+  --color-primary-900: #064e3b;
 
-  /* Accent colors */
-  --color-accent-pink: #f472b6;
-  --color-accent-blue: #60a5fa;
+  /* Accent colors - Teal/Cyan tones to complement green */
+  --color-accent-teal: #14b8a6;
   --color-accent-cyan: #22d3ee;
+  --color-accent-blue: #38bdf8;
 
   /* Glass effect colors */
   --color-glass-light: rgba(255, 255, 255, 0.1);
@@ -94,6 +94,10 @@
   ::selection {
     @apply bg-primary-500/30 text-white;
   }
+
+  .light ::selection {
+    @apply text-slate-900;
+  }
 }
 
 /* Glassmorphism utilities */
@@ -119,25 +123,30 @@
   }
 
   .light .glass {
-    @apply bg-white/60 border-white/40;
+    @apply bg-white/70 border-slate-200/50;
     @apply shadow-lg shadow-slate-200/50;
   }
 
   .light .glass-strong {
-    @apply bg-white/80 border-white/50;
+    @apply bg-white/80 border-slate-200/60;
   }
 
-  /* Gradient text */
+  /* Gradient text - Emerald/Teal/Cyan */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    @apply bg-gradient-to-r from-primary-400 via-accent-pink to-accent-blue;
+    @apply bg-gradient-to-r from-primary-400 via-accent-teal to-accent-cyan;
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
   }
 
+  /* Light mode gradient text */
+  .light .gradient-text {
+    @apply from-primary-600 via-primary-500 to-accent-teal;
+  }
+
   /* Gradient backgrounds */
   .gradient-bg {
-    @apply bg-gradient-to-br from-primary-600/20 via-accent-pink/10 to-accent-blue/20;
+    @apply bg-gradient-to-br from-primary-600/20 via-accent-teal/10 to-accent-cyan/20;
   }
 
   /* Animated orb for background */
@@ -151,7 +160,7 @@
   }
 
   .orb-accent {
-    @apply bg-gradient-to-br from-accent-pink to-accent-blue;
+    @apply bg-gradient-to-br from-accent-teal to-accent-cyan;
   }
 
   /* Button styles */
@@ -172,6 +181,12 @@
     @apply text-white font-medium;
     @apply hover:bg-white/20;
     @apply transition-all duration-300;
+  }
+
+  .light .btn-glass {
+    @apply bg-slate-900/10 border-slate-300/50;
+    @apply text-slate-700;
+    @apply hover:bg-slate-900/20;
   }
 
   /* Card hover effect */
