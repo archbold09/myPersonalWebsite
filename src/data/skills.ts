@@ -1,43 +1,78 @@
 import type { Skill } from '../types';
 
 export const skills: Skill[] = [
-  // Backend
-  {
-    name: 'PHP',
-    category: 'backend',
-    icon: 'php',
-    color: '#787CB4',
-    level: 90
-  },
+  // Core Stack (Backend & Full Stack)
   {
     name: 'Node.js',
     category: 'backend',
     icon: 'nodejs',
     color: '#679E63',
+    level: 95
+  },
+  {
+    name: 'React',
+    category: 'backend',
+    icon: 'react',
+    color: '#61DAFB',
     level: 90
   },
+  {
+    name: 'NestJS',
+    category: 'backend',
+    icon: 'nestjs',
+    color: '#E0234E',
+    level: 85
+  },
+  {
+    name: 'TypeScript',
+    category: 'backend',
+    icon: 'typescript',
+    color: '#3178C6',
+    level: 90
+  },
+  {
+    name: 'Go',
+    category: 'backend',
+    icon: 'go',
+    color: '#00ADD8',
+    level: 75
+  },
+  {
+    name: 'Express',
+    category: 'backend',
+    icon: 'express',
+    color: '#000000',
+    level: 90
+  },
+  {
+    name: 'Python',
+    category: 'backend',
+    icon: 'python',
+    color: '#3776AB',
+    level: 80
+  },
+  {
+    name: 'Java',
+    category: 'backend',
+    icon: 'java',
+    color: '#007396',
+    level: 70
+  },
+  {
+    name: 'PHP',
+    category: 'backend',
+    icon: 'php',
+    color: '#787CB4',
+    level: 85
+  },
 
-  // Frontend
+  // Frontend / UI & Styling
   {
     name: 'JavaScript',
     category: 'frontend',
     icon: 'javascript',
     color: '#F7E018',
     level: 95
-  },
-  {
-    name: 'TypeScript',
-    category: 'frontend',
-    icon: 'typescript',
-    color: '#3178C6',
-    level: 85
-  },
-  {
-    name: 'React',
-    category: 'frontend',
-    icon: 'react',
-    color: '#00D8FF',
-    level: 90
   },
   {
     name: 'Vue.js',
@@ -47,31 +82,45 @@ export const skills: Skill[] = [
     level: 90
   },
   {
-    name: 'HTML5',
+    name: 'Angular',
     category: 'frontend',
-    icon: 'html5',
-    color: '#FE4C1E',
-    level: 95
-  },
-  {
-    name: 'CSS3',
-    category: 'frontend',
-    icon: 'css3',
-    color: '#379AD6',
-    level: 85
+    icon: 'angular',
+    color: '#DD0031',
+    level: 70
   },
   {
     name: 'TailwindCSS',
     category: 'frontend',
     icon: 'tailwind',
-    color: '#17bab8',
+    color: '#38B2AC',
     level: 90
   },
   {
     name: 'Bootstrap',
     category: 'frontend',
     icon: 'bootstrap',
-    color: '#543B79',
+    color: '#7952B3',
+    level: 90
+  },
+  {
+    name: 'Material UI',
+    category: 'frontend',
+    icon: 'materialui',
+    color: '#0081CB',
+    level: 85
+  },
+  {
+    name: 'HTML5',
+    category: 'frontend',
+    icon: 'html5',
+    color: '#E34F26',
+    level: 95
+  },
+  {
+    name: 'CSS3',
+    category: 'frontend',
+    icon: 'css3',
+    color: '#1572B6',
     level: 90
   },
 
@@ -80,14 +129,7 @@ export const skills: Skill[] = [
     name: 'MongoDB',
     category: 'database',
     icon: 'mongodb',
-    color: '#7FC061',
-    level: 90
-  },
-  {
-    name: 'MySQL',
-    category: 'database',
-    icon: 'mysql',
-    color: '#00758F',
+    color: '#47A248',
     level: 90
   },
   {
@@ -95,38 +137,73 @@ export const skills: Skill[] = [
     category: 'database',
     icon: 'postgresql',
     color: '#336791',
-    level: 80
+    level: 85
+  },
+  {
+    name: 'MySQL',
+    category: 'database',
+    icon: 'mysql',
+    color: '#4479A1',
+    level: 90
+  },
+  {
+    name: 'Redis',
+    category: 'database',
+    icon: 'redis',
+    color: '#DC382D',
+    level: 75
   },
 
-  // Tools
+  // Tools & Cloud
   {
     name: 'Git',
     category: 'tools',
     icon: 'git',
     color: '#F05032',
-    level: 90
+    level: 95
   },
   {
     name: 'Docker',
     category: 'tools',
     icon: 'docker',
     color: '#2496ED',
+    level: 85
+  },
+  {
+    name: 'GCP',
+    category: 'tools',
+    icon: 'gcp',
+    color: '#4285F4',
+    level: 80
+  },
+  {
+    name: 'AWS',
+    category: 'tools',
+    icon: 'aws',
+    color: '#FF9900',
     level: 75
   },
   {
-    name: 'VS Code',
+    name: 'GraphQL',
     category: 'tools',
-    icon: 'vscode',
-    color: '#007ACC',
-    level: 95
+    icon: 'graphql',
+    color: '#E10098',
+    level: 80
+  },
+  {
+    name: 'Jest',
+    category: 'tools',
+    icon: 'jest',
+    color: '#C21325',
+    level: 85
   }
 ];
 
 export const skillCategories = [
-  { id: 'backend', label: 'Backend', icon: 'server' },
-  { id: 'frontend', label: 'Frontend', icon: 'layout' },
-  { id: 'database', label: 'Bases de Datos', icon: 'database' },
-  { id: 'tools', label: 'Herramientas', icon: 'tool' }
+  { id: 'backend', labelEs: 'Core Stack', labelEn: 'Core Stack', icon: 'server' },
+  { id: 'frontend', labelEs: 'UI & Styling', labelEn: 'UI & Styling', icon: 'layout' },
+  { id: 'database', labelEs: 'Bases de Datos', labelEn: 'Databases', icon: 'database' },
+  { id: 'tools', labelEs: 'Herramientas & Cloud', labelEn: 'Tools & Cloud', icon: 'tool' }
 ] as const;
 
 export function getSkillsByCategory(category: Skill['category']): Skill[] {

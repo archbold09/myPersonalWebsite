@@ -2,80 +2,167 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/home/Hero.astro';
 import GlassCard from '../components/common/GlassCard.astro';
-import { skills } from '../data/skills';
-
-const featuredSkills = skills.filter(s => ['React', 'Vue.js', 'Node.js', 'TypeScript', 'PHP', 'MongoDB'].includes(s.name));
+import ProfileCard from '../components/about/ProfileCard.astro';
+import Timeline from '../components/about/Timeline.astro';
+import SkillsGrid from '../components/about/SkillsGrid.astro';
+import { experiences, education } from '../data/experience';
+import { methodologySteps } from '../data/methodology';
 ---
 
-<BaseLayout title="Inicio">
+<BaseLayout title="Angel Archbold - Software Developer">
   <!-- Hero Section -->
   <Hero />
 
-  <!-- Skills Preview Section -->
-  <section class="py-20">
+  <!-- About Section -->
+  <section id="about" class="py-20">
     <div class="section-container">
       <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
-          Tecnologias que <span class="gradient-text">Domino</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+          <span class="lang-es">Sobre</span>
+          <span class="lang-en hidden">About</span>
+          <span class="gradient-text">
+            <span class="lang-es">Mi</span>
+            <span class="lang-en hidden">Me</span>
+          </span>
         </h2>
-        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 max-w-2xl mx-auto">
-          Stack tecnologico con el que trabajo dia a dia.
+        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <span class="lang-es">Conoce mi trayectoria profesional y experiencia.</span>
+          <span class="lang-en hidden">Learn about my professional journey and experience.</span>
         </p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
-        {featuredSkills.map((skill) => (
-          <div class="glass px-6 py-4 flex items-center gap-3 card-hover">
-            <div
-              class="w-10 h-10 rounded-lg flex items-center justify-center"
-              style={`background-color: ${skill.color}20;`}
-            >
-              <span class="text-2xl font-bold" style={`color: ${skill.color};`}>
-                {skill.name.charAt(0)}
-              </span>
-            </div>
-            <div>
-              <div class="font-medium">{skill.name}</div>
-              <div class="text-xs text-slate-400">{skill.level}%</div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="text-center mt-10">
-        <a href="/about" class="btn-glass inline-flex items-center gap-2">
-          Ver todas mis habilidades
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </a>
+      <div class="max-w-3xl mx-auto">
+        <ProfileCard />
       </div>
     </div>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience" class="py-20">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+          <span class="lang-es">Experiencia</span>
+          <span class="lang-en hidden">Work</span>
+          <span class="gradient-text">
+            <span class="lang-es">Laboral</span>
+            <span class="lang-en hidden">Experience</span>
+          </span>
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <span class="lang-es">Mi recorrido profesional en el desarrollo de software.</span>
+          <span class="lang-en hidden">My professional journey in software development.</span>
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <Timeline items={experiences} type="experience" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-20">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+          <span class="gradient-text">
+            <span class="lang-es">Estudios</span>
+            <span class="lang-en hidden">Education</span>
+          </span>
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <span class="lang-es">Mi formacion academica y aprendizaje continuo.</span>
+          <span class="lang-en hidden">My academic background and continuous learning.</span>
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <Timeline items={education} type="education" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+          <span class="lang-es">Conocimientos de</span>
+          <span class="lang-en hidden">Programming</span>
+          <span class="gradient-text">
+            <span class="lang-es">Programacion</span>
+            <span class="lang-en hidden">Skills</span>
+          </span>
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <span class="lang-es">Lenguajes, frameworks, bases de datos y herramientas que domino.</span>
+          <span class="lang-en hidden">Languages, frameworks, databases and tools I master.</span>
+        </p>
+      </div>
+
+      <SkillsGrid />
+    </div>
+  </section>
+
   <!-- CTA Section -->
-  <section class="py-20">
+  <section id="contact" class="py-20">
     <div class="section-container">
       <GlassCard class="text-center" padding="lg">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
-          Trabajemos <span class="gradient-text">Juntos</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+          <span class="lang-es">Trabajemos</span>
+          <span class="lang-en hidden">Let's Work</span>
+          <span class="gradient-text">
+            <span class="lang-es">Juntos</span>
+            <span class="lang-en hidden">Together</span>
+          </span>
         </h2>
-        <p class="text-slate-400 max-w-2xl mx-auto mb-8">
-          Estoy disponible para proyectos freelance y oportunidades de trabajo.
-          Contactame para discutir tu proximo proyecto.
+        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
+          <span class="lang-es">Estoy disponible para proyectos freelance y oportunidades de trabajo. Contactame para discutir tu proximo proyecto.</span>
+          <span class="lang-en hidden">I'm available for freelance projects and job opportunities. Contact me to discuss your next project.</span>
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="mailto:angelarchbold09@gmail.com" class="btn-primary inline-flex items-center justify-center gap-2">
+          <!-- <a href="mailto:angelarchbold09@gmail.com" class="btn-primary inline-flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            Enviar Email
-          </a>
-          <a href="/about" class="btn-glass inline-flex items-center justify-center gap-2">
-            Conocer mas sobre mi
+            <span class="lang-es">Enviar Email</span>
+            <span class="lang-en hidden">Send Email</span>
+          </a> -->
+          <a
+            href="https://www.linkedin.com/in/archbold09/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-glass inline-flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
           </a>
         </div>
       </GlassCard>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Language switching for content
+  function updateContentLanguage(lang: 'es' | 'en') {
+    document.querySelectorAll('.lang-es').forEach(el => {
+      el.classList.toggle('hidden', lang !== 'es');
+    });
+    document.querySelectorAll('.lang-en').forEach(el => {
+      el.classList.toggle('hidden', lang !== 'en');
+    });
+  }
+
+  // Listen for language changes
+  window.addEventListener('language-change', ((e: CustomEvent) => {
+    updateContentLanguage(e.detail.language);
+  }) as EventListener);
+
+  // Initialize with saved language
+  const savedLang = localStorage.getItem('language') as 'es' | 'en' || 'es';
+  updateContentLanguage(savedLang);
+</script>

@@ -8,6 +8,8 @@ export interface PersonalInfo {
   phones: string[];
   social: SocialLinks;
   location: string;
+  languages?: string[];
+  mainSkills?: string[];
 }
 
 export interface SocialLinks {
@@ -15,6 +17,7 @@ export interface SocialLinks {
   linkedin: string;
   twitter?: string;
   instagram?: string;
+  website?: string;
 }
 
 // Experience and education types
@@ -70,7 +73,11 @@ export interface ProjectLinks {
 export interface MethodologyStep {
   id: number;
   title: string;
+  titleEs: string;
+  titleEn: string;
   description: string;
+  descriptionEs: string;
+  descriptionEn: string;
   icon: string;
   image?: string;
 }

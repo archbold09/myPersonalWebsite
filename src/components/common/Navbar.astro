@@ -1,14 +1,16 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import LanguageToggle from './LanguageToggle.astro';
 
+// Navigation items with both languages
 const navItems = [
-  { label: 'Inicio', href: '/' },
-  { label: 'Sobre Mi', href: '/about' },
-  // { label: 'Proyectos', href: '/projects' }, // Hidden temporarily
-  { label: 'Metodologia', href: '/methodology' },
+  { labelEs: 'Inicio', labelEn: 'Home', href: '#', key: 'home' },
+  { labelEs: 'Sobre Mi', labelEn: 'About', href: '#about', key: 'about' },
+  { labelEs: 'Experiencia', labelEn: 'Experience', href: '#experience', key: 'experience' },
+  { labelEs: 'Skills', labelEn: 'Skills', href: '#skills', key: 'skills' },
+  { labelEs: 'Metodologia', labelEn: 'Methodology', href: '#methodology', key: 'methodology' },
+  { labelEs: 'Contacto', labelEn: 'Contact', href: '#contact', key: 'contact' },
 ];
-
-const currentPath = Astro.url.pathname;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50">
@@ -21,9 +23,6 @@ const currentPath = Astro.url.pathname;
           alt="Angel Archbold Logo"
           class="h-10 w-auto transition-transform group-hover:scale-110"
         />
-        <span class="hidden sm:block font-display font-semibold text-lg gradient-text">
-          Angel Archbold
-        </span>
       </a>
 
       <!-- Desktop Navigation -->
@@ -31,25 +30,25 @@ const currentPath = Astro.url.pathname;
         {navItems.map((item) => (
           <a
             href={item.href}
-            class:list={[
-              'px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300',
-              currentPath === item.href
-                ? 'bg-primary-500/20 text-primary-400'
-                : 'text-slate-300 hover:text-white hover:bg-white/10',
-            ]}
+            class="nav-link px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10"
+            data-nav-key={item.key}
+            data-label-es={item.labelEs}
+            data-label-en={item.labelEn}
           >
-            {item.label}
+            <span class="nav-label-es">{item.labelEs}</span>
+            <span class="nav-label-en hidden">{item.labelEn}</span>
           </a>
         ))}
-        <div class="ml-2 pl-2 border-l border-white/10">
-          <ThemeToggle />
+        <div class="ml-2 pl-2 border-l border-slate-300 dark:border-white/10 flex items-center gap-2">
+          <LanguageToggle />
+          <!-- <ThemeToggle /> -->
         </div>
       </div>
 
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 rounded-xl hover:bg-white/10 transition-colors"
+        class="md:hidden p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-700 dark:text-white"
         aria-label="Toggle menu"
       >
         <svg
@@ -78,18 +77,16 @@ const currentPath = Astro.url.pathname;
         {navItems.map((item) => (
           <a
             href={item.href}
-            class:list={[
-              'px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300',
-              currentPath === item.href
-                ? 'bg-primary-500/20 text-primary-400'
-                : 'text-slate-300 hover:text-white hover:bg-white/10',
-            ]}
+            class="nav-link px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10"
+            data-nav-key={item.key}
           >
-            {item.label}
+            <span class="nav-label-es">{item.labelEs}</span>
+            <span class="nav-label-en hidden">{item.labelEn}</span>
           </a>
         ))}
-        <div class="pt-2 mt-2 border-t border-white/10 flex justify-center">
-          <ThemeToggle />
+        <div class="pt-2 mt-2 border-t border-slate-300 dark:border-white/10 flex justify-center gap-4">
+          <LanguageToggle />
+          <!-- <ThemeToggle /> -->
         </div>
       </div>
     </div>
@@ -125,4 +122,49 @@ const currentPath = Astro.url.pathname;
       menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
     });
   });
+
+  // Highlight active section on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function highlightNavOnScroll() {
+    const scrollY = window.scrollY;
+
+    sections.forEach((section) => {
+      const el = section as HTMLElement;
+      const sectionHeight = el.offsetHeight;
+      const sectionTop = el.offsetTop - 100;
+      const sectionId = section.getAttribute('id');
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navLinks.forEach((link) => {
+          link.classList.remove('bg-primary-500/20', 'text-primary-600', 'dark:text-primary-400');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('bg-primary-500/20', 'text-primary-600', 'dark:text-primary-400');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', highlightNavOnScroll);
+
+  // Language switching for nav labels
+  function updateNavLanguage(lang: 'es' | 'en') {
+    document.querySelectorAll('.nav-label-es').forEach(el => {
+      el.classList.toggle('hidden', lang !== 'es');
+    });
+    document.querySelectorAll('.nav-label-en').forEach(el => {
+      el.classList.toggle('hidden', lang !== 'en');
+    });
+  }
+
+  // Listen for language changes
+  window.addEventListener('language-change', ((e: CustomEvent) => {
+    updateNavLanguage(e.detail.language);
+  }) as EventListener);
+
+  // Initialize with saved language
+  const savedLang = localStorage.getItem('language') as 'es' | 'en' || 'es';
+  updateNavLanguage(savedLang);
 </script>

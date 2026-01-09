@@ -2,12 +2,12 @@ import type { PersonalInfo } from '../types';
 
 export const personal: PersonalInfo = {
   name: 'Angel Archbold',
-  fullName: 'Angel Junior Torres Archbold',
-  title: 'Senior Fullstack Developer',
-  description: `Desarrollador Web Fullstack con mas de 6 años de experiencia creando aplicaciones web complejas
-    para la solucion de problemas en procesos administrativos. Especializado en JavaScript, TypeScript,
-    React, Vue, Node.js y PHP. Experiencia en proyectos de contabilidad, sistemas educativos,
-    e-commerce y soluciones empresariales.`,
+  fullName: 'Angel Archbold',
+  title: 'Software Developer',
+  description: `Specialized in web development, cloud services and data science.
+    Extensive experience in custom software development for large and small companies.
+    Areas of expertise: relational marketing, education, public services, ecommerce, accounting.
+    Passionate about technology, video games and gym.`,
   emails: [
     'angelarchbold09@gmail.com',
   ],
@@ -17,6 +17,9 @@ export const personal: PersonalInfo = {
   social: {
     github: 'https://github.com/archbold09',
     linkedin: 'https://www.linkedin.com/in/archbold09/',
+    website: 'https://angelarchboldweb.vercel.app/'
   },
-  location: 'Colombia'
+  location: 'Barranquilla, Colombia',
+  languages: ['English (Professional Working)', 'Spanish (Native)'],
+  mainSkills: ['JavaScript', 'TypeScript', 'Node', 'Go', 'React', 'Python', 'Java', 'Infrastructure']
 };

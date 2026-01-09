@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <!-- Background glow effects -->
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00c58e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Floating orbs background -->
+  <circle cx="420" cy="80" r="40" fill="#00c58e" opacity="0.15"/>
+  <circle cx="60" cy="400" r="50" fill="#14b8a6" opacity="0.12"/>
+  <circle cx="450" cy="380" r="30" fill="#22d3ee" opacity="0.1"/>
+
+  <!-- Desk -->
+  <rect x="80" y="340" width="340" height="12" rx="4" fill="#334155"/>
+  <rect x="100" y="352" width="12" height="80" rx="2" fill="#475569"/>
+  <rect x="388" y="352" width="12" height="80" rx="2" fill="#475569"/>
+
+  <!-- Monitor stand -->
+  <rect x="230" y="280" width="40" height="60" rx="4" fill="#64748b"/>
+  <rect x="200" y="330" width="100" height="10" rx="5" fill="#64748b"/>
+
+  <!-- Monitor -->
+  <rect x="120" y="120" width="260" height="170" rx="12" fill="#1e293b" stroke="#475569" stroke-width="3"/>
+
+  <!-- Screen -->
+  <rect x="132" y="132" width="236" height="146" rx="6" fill="url(#screenGradient)"/>
+
+  <!-- Code lines on screen -->
+  <g opacity="0.9">
+    <!-- Line 1 - import -->
+    <rect x="148" y="148" width="12" height="8" rx="2" fill="#c084fc"/>
+    <rect x="164" y="148" width="50" height="8" rx="2" fill="#f472b6"/>
+    <rect x="218" y="148" width="30" height="8" rx="2" fill="#94a3b8"/>
+
+    <!-- Line 2 - const -->
+    <rect x="148" y="164" width="24" height="8" rx="2" fill="#c084fc"/>
+    <rect x="176" y="164" width="40" height="8" rx="2" fill="#00c58e"/>
+    <rect x="220" y="164" width="8" height="8" rx="2" fill="#f8fafc"/>
+    <rect x="232" y="164" width="60" height="8" rx="2" fill="#fbbf24"/>
+
+    <!-- Line 3 - function -->
+    <rect x="148" y="180" width="36" height="8" rx="2" fill="#c084fc"/>
+    <rect x="188" y="180" width="55" height="8" rx="2" fill="#00c58e"/>
+    <rect x="247" y="180" width="16" height="8" rx="2" fill="#94a3b8"/>
+    <rect x="267" y="180" width="8" height="8" rx="2" fill="#fbbf24"/>
+
+    <!-- Line 4 - indented -->
+    <rect x="164" y="196" width="20" height="8" rx="2" fill="#c084fc"/>
+    <rect x="188" y="196" width="70" height="8" rx="2" fill="#22d3ee"/>
+    <rect x="262" y="196" width="40" height="8" rx="2" fill="#fbbf24"/>
+
+    <!-- Line 5 - return -->
+    <rect x="164" y="212" width="32" height="8" rx="2" fill="#c084fc"/>
+    <rect x="200" y="212" width="45" height="8" rx="2" fill="#00c58e"/>
+
+    <!-- Line 6 - closing -->
+    <rect x="148" y="228" width="8" height="8" rx="2" fill="#fbbf24"/>
+
+    <!-- Line 7 - export -->
+    <rect x="148" y="248" width="32" height="8" rx="2" fill="#c084fc"/>
+    <rect x="184" y="248" width="40" height="8" rx="2" fill="#00c58e"/>
+  </g>
+
+  <!-- Monitor webcam -->
+  <circle cx="250" cy="126" r="4" fill="#475569"/>
+
+  <!-- Keyboard -->
+  <rect x="160" y="348" width="180" height="50" rx="6" fill="#334155" stroke="#475569" stroke-width="2"/>
+  <g fill="#475569">
+    <rect x="172" y="358" width="20" height="10" rx="2"/>
+    <rect x="196" y="358" width="20" height="10" rx="2"/>
+    <rect x="220" y="358" width="20" height="10" rx="2"/>
+    <rect x="244" y="358" width="20" height="10" rx="2"/>
+    <rect x="268" y="358" width="20" height="10" rx="2"/>
+    <rect x="292" y="358" width="20" height="10" rx="2"/>
+    <rect x="316" y="358" width="16" height="10" rx="2"/>
+
+    <rect x="172" y="372" width="16" height="10" rx="2"/>
+    <rect x="192" y="372" width="20" height="10" rx="2"/>
+    <rect x="216" y="372" width="20" height="10" rx="2"/>
+    <rect x="240" y="372" width="20" height="10" rx="2"/>
+    <rect x="264" y="372" width="20" height="10" rx="2"/>
+    <rect x="288" y="372" width="20" height="10" rx="2"/>
+    <rect x="312" y="372" width="20" height="10" rx="2"/>
+
+    <rect x="200" y="386" width="100" height="8" rx="2"/>
+  </g>
+
+  <!-- Coffee mug -->
+  <rect x="370" y="305" width="30" height="35" rx="4" fill="#475569"/>
+  <path d="M400 315 Q415 315 415 327.5 Q415 340 400 340" stroke="#475569" stroke-width="4" fill="none"/>
+  <ellipse cx="385" cy="310" rx="12" ry="4" fill="#00c58e" opacity="0.6"/>
+
+  <!-- Plant pot -->
+  <rect x="60" y="295" width="35" height="45" rx="4" fill="#64748b"/>
+  <ellipse cx="77.5" cy="295" rx="17.5" ry="6" fill="#475569"/>
+
+  <!-- Plant leaves -->
+  <g filter="url(#softGlow)">
+    <path d="M77 290 Q65 260 77 235 Q89 260 77 290" fill="#00c58e"/>
+    <path d="M77 285 Q55 265 50 240 Q70 255 77 285" fill="#14b8a6"/>
+    <path d="M77 285 Q99 265 105 240 Q85 255 77 285" fill="#14b8a6"/>
+    <path d="M77 280 Q60 250 55 220 Q75 245 77 280" fill="#00c58e" opacity="0.8"/>
+    <path d="M77 280 Q94 250 99 220 Q79 245 77 280" fill="#00c58e" opacity="0.8"/>
+  </g>
+
+  <!-- Floating elements with glow -->
+  <g filter="url(#glow)">
+    <!-- React-like logo -->
+    <g transform="translate(400, 150)">
+      <ellipse cx="0" cy="0" rx="25" ry="10" stroke="#00c58e" stroke-width="2" fill="none" transform="rotate(0)"/>
+      <ellipse cx="0" cy="0" rx="25" ry="10" stroke="#00c58e" stroke-width="2" fill="none" transform="rotate(60)"/>
+      <ellipse cx="0" cy="0" rx="25" ry="10" stroke="#00c58e" stroke-width="2" fill="none" transform="rotate(120)"/>
+      <circle cx="0" cy="0" r="5" fill="#00c58e"/>
+    </g>
+
+    <!-- Brackets -->
+    <text x="70" y="170" font-family="monospace" font-size="40" fill="#14b8a6" font-weight="bold">&lt;/&gt;</text>
+
+    <!-- Git branch icon -->
+    <g transform="translate(420, 260)">
+      <circle cx="0" cy="0" r="6" fill="#22d3ee"/>
+      <circle cx="0" cy="30" r="6" fill="#22d3ee"/>
+      <circle cx="20" cy="15" r="6" fill="#22d3ee"/>
+      <line x1="0" y1="6" x2="0" y2="24" stroke="#22d3ee" stroke-width="2"/>
+      <path d="M0 10 Q10 10 15 15" stroke="#22d3ee" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Cursor blink indicator on screen -->
+  <rect x="228" y="248" width="2" height="10" fill="#00c58e">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Success checkmark floating -->
+  <g transform="translate(440, 320)" filter="url(#softGlow)">
+    <circle cx="0" cy="0" r="15" fill="#00c58e" opacity="0.2"/>
+    <path d="M-6 0 L-2 4 L6 -4" stroke="#00c58e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

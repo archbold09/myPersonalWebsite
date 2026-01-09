@@ -3,38 +3,65 @@ import type { Experience, Education } from '../types';
 export const experiences: Experience[] = [
   {
     id: 'exp-1',
-    company: 'Freelance & Personal Projects',
-    role: 'Senior Fullstack Developer',
-    description: 'Desarrollo de soluciones web personalizadas para clientes, implementando arquitecturas modernas con React, Vue, Node.js y bases de datos SQL/NoSQL.',
-    period: '2020 - Presente',
-    year: '2020+',
-    type: 'freelance'
+    company: 'Mercado Libre',
+    role: 'Software Developer',
+    description: 'Development of scalable solutions for the largest e-commerce platform in Latin America.',
+    period: 'Oct 2022 - Present',
+    year: '2022+',
+    type: 'work'
   },
   {
     id: 'exp-2',
-    company: 'INSUMOS Y SUMINISTROS DE LA COSTA',
-    role: 'Fullstack Developer',
-    description: 'Desarrollo completo del aplicativo ACC-PYME, software contable para agilizar procesos financieros de una empresa.',
-    period: '2020',
-    year: '2020',
+    company: 'LAX #DataLovers',
+    role: 'Software Engineer',
+    description: 'Software development and data engineering solutions.',
+    period: 'Aug 2021 - Dec 2022',
+    year: '2021',
     type: 'work'
   },
   {
     id: 'exp-3',
-    company: 'SENA - SENNOVA',
-    role: 'Investigador y Programador',
-    description: 'Desarrollo del aplicativo de contabilidad y pagina publicitaria del CONGRESO 2019 SENNOVA.',
-    period: 'Julio 2019 - Enero 2020',
-    year: '2019',
+    company: 'Quality Telecom S.L',
+    role: 'Software Engineer',
+    description: 'Created FARKAMON APP for online sales and pharmacy product management. Technologies: Vue.js, Node.js, PostgreSQL, Docker, GCP, Jest, CI/CD.',
+    period: 'Jan 2021 - Dec 2021',
+    year: '2021',
     type: 'work'
   },
   {
     id: 'exp-4',
-    company: 'SENA - SENNOVA',
-    role: 'Monitor Programador',
-    description: 'Desarrollo del aplicativo de horarios para gestionar el horario de las fichas e instructores y mejorar el proceso de creacion para los funcionarios SENA.',
-    period: 'Abril 2019 - Julio 2019',
+    company: 'Leader Center',
+    role: 'Software Engineer',
+    description: 'Client information management system. Technologies: Vue.js, Node.js, PHP, PostgreSQL, MySQL, MongoDB, GraphQL.',
+    period: 'Dec 2020 - May 2021',
+    year: '2020',
+    type: 'work'
+  },
+  {
+    id: 'exp-5',
+    company: 'Extreme Technologies S.A.',
+    role: 'Software Developer',
+    description: 'Development of new functionalities and bug fixes. Technologies: HTML, CSS, JavaScript, PHP, PostgreSQL, MySQL.',
+    period: 'Jul 2020 - Dec 2020',
+    year: '2020',
+    type: 'work'
+  },
+  {
+    id: 'exp-6',
+    company: 'INSUMOS Y SUMINISTROS DE LA COSTA',
+    role: 'Software Engineer',
+    description: 'Accounting software development for SMEs. Technologies: Vue.js, PHP, Node.js, MySQL.',
+    period: 'Jun 2019 - Jul 2020',
     year: '2019',
+    type: 'work'
+  },
+  {
+    id: 'exp-7',
+    company: 'SENA - SENNOVA',
+    role: 'Research Developer',
+    description: 'Supported, developed and worked in teams to create projects for apprentices and instructors. Development of research tools and processes.',
+    period: 'Apr 2018 - Jul 2020',
+    year: '2018',
     type: 'work'
   }
 ];
@@ -42,16 +69,23 @@ export const experiences: Experience[] = [
 export const education: Education[] = [
   {
     id: 'edu-1',
-    institution: 'Educacion Online y Proyectos Personales',
-    degree: 'Aprendizaje Continuo',
-    period: '2020 - Presente',
-    year: 'Actual'
+    institution: 'Platzi',
+    degree: 'Software Developer - Computer Software Engineering',
+    period: '2020',
+    year: '2020'
   },
   {
     id: 'edu-2',
+    institution: 'Universidad del Atlantico',
+    degree: 'Licentiate - English Language and Literature',
+    period: '2021 - 2024',
+    year: '2024'
+  },
+  {
+    id: 'edu-4',
     institution: 'SENA',
-    degree: 'Tecnologo en Analisis y Desarrollo de Sistemas de Informacion',
-    period: '2017 - 2020',
-    year: '2020'
+    degree: 'Technologist in Analysis and Development of Information Systems',
+    period: '2016 - 2019',
+    year: '2019'
   }
 ];
