@@ -1,2 +1,0 @@
-{"version":2,"name":"personalweb-angelarchbold",
-"builds":[{"src":"package.json","use":"@now/static-build"}]}

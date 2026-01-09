@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/projects/ProjectCard.astro';
+import { getAllProjects } from '../../data/projects';
+
+const projects = getAllProjects();
+---
+
+<BaseLayout
+  title="Proyectos"
+  description="Explora mi portafolio de proyectos de desarrollo web. Aplicaciones con React, Vue, Node.js y mas."
+>
+  <!-- Page Header -->
+  <section class="py-12">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+          Mis <span class="gradient-text">Proyectos</span>
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Una coleccion de mis trabajos en desarrollo web, desde aplicaciones empresariales
+          hasta sitios de e-commerce y herramientas de productividad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="pb-20">
+    <div class="section-container">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project) => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="section-container">
+      <div class="glass text-center p-12">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold mb-4">
+          ¿Tienes un proyecto en <span class="gradient-text">mente</span>?
+        </h2>
+        <p class="text-slate-400 max-w-xl mx-auto mb-8">
+          Estoy disponible para nuevos proyectos. Contáctame para discutir tus ideas.
+        </p>
+        <a href="mailto:angelarchbold09@gmail.com" class="btn-primary inline-flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Contáctame
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

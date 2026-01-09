@@ -1,0 +1,128 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const navItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Sobre Mi', href: '/about' },
+  { label: 'Proyectos', href: '/projects' },
+  { label: 'Metodologia', href: '/methodology' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50">
+  <nav class="section-container py-4">
+    <div class="glass px-6 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img
+          src="/images/logo/logoAngel.png"
+          alt="Angel Archbold Logo"
+          class="h-10 w-auto transition-transform group-hover:scale-110"
+        />
+        <span class="hidden sm:block font-display font-semibold text-lg gradient-text">
+          Angel Archbold
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-1">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300',
+              currentPath === item.href
+                ? 'bg-primary-500/20 text-primary-400'
+                : 'text-slate-300 hover:text-white hover:bg-white/10',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))}
+        <div class="ml-2 pl-2 border-l border-white/10">
+          <ThemeToggle />
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 rounded-xl hover:bg-white/10 transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            id="menu-icon"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div
+      id="mobile-menu"
+      class="md:hidden glass mt-2 p-4 hidden"
+    >
+      <div class="flex flex-col gap-2">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300',
+              currentPath === item.href
+                ? 'bg-primary-500/20 text-primary-400'
+                : 'text-slate-300 hover:text-white hover:bg-white/10',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))}
+        <div class="pt-2 mt-2 border-t border-white/10 flex justify-center">
+          <ThemeToggle />
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Spacer for fixed navbar -->
+<div class="h-24"></div>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  let isOpen = false;
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    mobileMenu?.classList.toggle('hidden');
+
+    if (isOpen) {
+      menuIcon?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+    } else {
+      menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    }
+  });
+
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      isOpen = false;
+      menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    });
+  });
+</script>

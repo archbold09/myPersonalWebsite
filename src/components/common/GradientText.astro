@@ -1,0 +1,25 @@
+---
+interface Props {
+  as?: 'span' | 'h1' | 'h2' | 'h3' | 'p';
+  class?: string;
+  animate?: boolean;
+}
+
+const {
+  as: Tag = 'span',
+  class: className = '',
+  animate = true
+} = Astro.props;
+---
+
+<Tag
+  class:list={[
+    'bg-clip-text text-transparent',
+    'bg-gradient-to-r from-primary-400 via-accent-pink to-accent-blue',
+    animate && 'animate-gradient bg-[length:200%_200%]',
+    className
+  ]}
+  style={animate ? 'animation: gradient-shift 3s ease infinite;' : ''}
+>
+  <slot />
+</Tag>

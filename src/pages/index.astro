@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import GlassCard from '../components/common/GlassCard.astro';
+import { getCompletedProjects } from '../data/projects';
+import { skills } from '../data/skills';
+
+const featuredProjects = getCompletedProjects().slice(0, 3);
+const featuredSkills = skills.filter(s => ['React', 'Vue.js', 'Node.js', 'TypeScript', 'PHP', 'MongoDB'].includes(s.name));
+---
+
+<BaseLayout title="Inicio">
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Featured Projects Section -->
+  <section class="py-20">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Proyectos <span class="gradient-text">Destacados</span>
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Una seleccion de mis trabajos mas recientes en desarrollo web.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredProjects.map((project) => (
+          <a href={`/projects/${project.slug}`} class="group">
+            <GlassCard class="h-full overflow-hidden">
+              <div class="aspect-video rounded-xl overflow-hidden mb-4">
+                <img
+                  src={project.thumbnail}
+                  alt={project.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-400 transition-colors">
+                {project.title}
+              </h3>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                {project.description}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {project.technologies.slice(0, 3).map((tech) => (
+                  <span class="px-2 py-1 text-xs rounded-lg bg-primary-500/20 text-primary-400">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </GlassCard>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/projects" class="btn-glass inline-flex items-center gap-2">
+          Ver todos los proyectos
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Preview Section -->
+  <section class="py-20">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Tecnologias que <span class="gradient-text">Domino</span>
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Stack tecnologico con el que trabajo dia a dia.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+        {featuredSkills.map((skill) => (
+          <div class="glass px-6 py-4 flex items-center gap-3 card-hover">
+            <div
+              class="w-10 h-10 rounded-lg flex items-center justify-center"
+              style={`background-color: ${skill.color}20;`}
+            >
+              <span class="text-2xl font-bold" style={`color: ${skill.color};`}>
+                {skill.name.charAt(0)}
+              </span>
+            </div>
+            <div>
+              <div class="font-medium">{skill.name}</div>
+              <div class="text-xs text-slate-400">{skill.level}%</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/about" class="btn-glass inline-flex items-center gap-2">
+          Ver todas mis habilidades
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="section-container">
+      <GlassCard class="text-center" padding="lg">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Trabajemos <span class="gradient-text">Juntos</span>
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto mb-8">
+          Estoy disponible para proyectos freelance y oportunidades de trabajo.
+          Contactame para discutir tu proximo proyecto.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="mailto:angelarchbold09@gmail.com" class="btn-primary inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Enviar Email
+          </a>
+          <a href="/about" class="btn-glass inline-flex items-center justify-center gap-2">
+            Conocer mas sobre mi
+          </a>
+        </div>
+      </GlassCard>
+    </div>
+  </section>
+</BaseLayout>

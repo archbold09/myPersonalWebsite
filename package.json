@@ -1,21 +1,20 @@
 {
-  "name": "personalweba-angelarchbold",
-  "version": "1.0.0",
-  "description": "Angel Archbold, pagina personal. ",
-  "author": "Archbold_Angel",
-  "private": true,
+  "name": "portfolio-astro",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
-    "vuetify": "^2.1.6"
-  },
-  "devDependencies": {
-    "@mdi/font": "^4.5.95",
-    "@nuxtjs/vuetify": "^1.0.0"
+    "@astrojs/sitemap": "^3.6.1",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/poppins": "^5.2.7",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.7",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.18"
   }
 }

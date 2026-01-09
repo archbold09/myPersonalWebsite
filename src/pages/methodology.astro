@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlassCard from '../components/common/GlassCard.astro';
+import { methodologySteps } from '../data/methodology';
+---
+
+<BaseLayout
+  title="Metodologia"
+  description="Conoce mi proceso de trabajo para desarrollar proyectos web. Desde la idea hasta la publicacion."
+>
+  <!-- Page Header -->
+  <section class="py-12">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+          Mi <span class="gradient-text">Metodologia</span>
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Un proceso estructurado para convertir ideas en productos digitales exitosos.
+          Cada proyecto sigue estas etapas para garantizar calidad y satisfaccion.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Steps -->
+  <section class="pb-20">
+    <div class="section-container">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {methodologySteps.map((step, index) => (
+          <GlassCard class="relative overflow-hidden group">
+            <!-- Step Number -->
+            <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-primary-500/10 flex items-end justify-start pl-6 pb-6">
+              <span class="text-4xl font-bold text-primary-500/30">{step.id}</span>
+            </div>
+
+            <!-- Icon/Image -->
+            <div class="mb-6 relative">
+              {step.image ? (
+                <div class="w-20 h-20 rounded-2xl overflow-hidden bg-gradient-to-br from-primary-500/20 to-accent-pink/20 p-4">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    class="w-full h-full object-contain transition-transform group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500/20 to-accent-pink/20 flex items-center justify-center">
+                  <span class="text-3xl">
+                    {step.id === 1 && '💡'}
+                    {step.id === 2 && '📋'}
+                    {step.id === 3 && '🎨'}
+                    {step.id === 4 && '🖥️'}
+                    {step.id === 5 && '⚙️'}
+                    {step.id === 6 && '🚀'}
+                  </span>
+                </div>
+              )}
+            </div>
+
+            <!-- Content -->
+            <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-400 transition-colors">
+              {step.title}
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              {step.description}
+            </p>
+
+            <!-- Progress indicator -->
+            <div class="mt-6 flex items-center gap-2">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div
+                  class={`h-1 flex-1 rounded-full ${i < step.id ? 'bg-primary-500' : 'bg-slate-700'}`}
+                />
+              ))}
+            </div>
+          </GlassCard>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Flow -->
+  <section class="py-20">
+    <div class="section-container">
+      <div class="glass p-8 md:p-12">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl sm:text-3xl font-display font-bold mb-4">
+            Un Proceso <span class="gradient-text">Iterativo</span>
+          </h2>
+          <p class="text-slate-400 max-w-2xl mx-auto">
+            Mi metodologia es flexible y se adapta a las necesidades de cada proyecto.
+            Mantengo comunicacion constante contigo en cada etapa.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
+              <svg class="w-8 h-8 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold mb-2">Comunicacion Constante</h3>
+            <p class="text-sm text-slate-400">
+              Mantente informado del progreso en cada etapa del desarrollo.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent-pink/20 to-accent-pink/10 flex items-center justify-center">
+              <svg class="w-8 h-8 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 class="font-semibold mb-2">Iteraciones Rapidas</h3>
+            <p class="text-sm text-slate-400">
+              Entregas frecuentes para que puedas ver el progreso y dar feedback.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent-blue/20 to-accent-blue/10 flex items-center justify-center">
+              <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold mb-2">Calidad Garantizada</h3>
+            <p class="text-sm text-slate-400">
+              Testing riguroso antes de cada entrega para asegurar un producto solido.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="section-container">
+      <div class="glass text-center p-12">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold mb-4">
+          ¿Listo para <span class="gradient-text">comenzar</span>?
+        </h2>
+        <p class="text-slate-400 max-w-xl mx-auto mb-8">
+          Cuéntame sobre tu proyecto y diseñemos juntos la mejor solucion.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="mailto:angelarchbold09@gmail.com" class="btn-primary inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Contáctame
+          </a>
+          <a href="/projects" class="btn-glass inline-flex items-center justify-center gap-2">
+            Ver mis proyectos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

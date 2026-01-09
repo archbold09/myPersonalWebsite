@@ -1,0 +1,76 @@
+---
+import type { Project } from '../../types';
+import GlassCard from '../common/GlassCard.astro';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+
+const statusColors = {
+  'completed': 'bg-green-500/20 text-green-400',
+  'in-progress': 'bg-yellow-500/20 text-yellow-400',
+  'planned': 'bg-blue-500/20 text-blue-400'
+};
+
+const statusLabels = {
+  'completed': 'Completado',
+  'in-progress': 'En Progreso',
+  'planned': 'Planificado'
+};
+---
+
+<a href={`/projects/${project.slug}`} class="group block h-full">
+  <GlassCard class="h-full overflow-hidden flex flex-col">
+    <!-- Thumbnail -->
+    <div class="aspect-video rounded-xl overflow-hidden mb-4 relative">
+      <img
+        src={project.thumbnail}
+        alt={project.title}
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        loading="lazy"
+      />
+      <!-- Status Badge -->
+      <span class={`absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-lg ${statusColors[project.status]}`}>
+        {statusLabels[project.status]}
+      </span>
+    </div>
+
+    <!-- Content -->
+    <div class="flex-1 flex flex-col">
+      <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-400 transition-colors">
+        {project.title}
+      </h3>
+
+      <p class="text-slate-400 text-sm mb-4 flex-1 line-clamp-3">
+        {project.description}
+      </p>
+
+      <!-- Technologies -->
+      <div class="flex flex-wrap gap-2 mb-4">
+        {project.technologies.slice(0, 4).map((tech) => (
+          <span class="px-2 py-1 text-xs rounded-lg bg-primary-500/20 text-primary-400">
+            {tech}
+          </span>
+        ))}
+        {project.technologies.length > 4 && (
+          <span class="px-2 py-1 text-xs rounded-lg bg-slate-500/20 text-slate-400">
+            +{project.technologies.length - 4}
+          </span>
+        )}
+      </div>
+
+      <!-- Year -->
+      <div class="flex items-center justify-between text-sm text-slate-400">
+        <span>{project.year}</span>
+        <span class="flex items-center gap-1 text-primary-400 group-hover:gap-2 transition-all">
+          Ver mas
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </GlassCard>
+</a>
