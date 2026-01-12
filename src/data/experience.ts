@@ -71,7 +71,7 @@ export const education: Education[] = [
     id: 'edu-1',
     institution: 'Platzi',
     degree: 'Software Developer - Computer Software Engineering',
-    period: '2020',
+    period: 'Current',
     year: '2020'
   },
   {

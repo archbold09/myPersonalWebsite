@@ -2,14 +2,15 @@
 import { personal } from '../../data/personal';
 ---
 
-<footer class="relative z-10 mt-20">
+<footer id="footer" class="relative z-10 mt-20">
   <div class="section-container py-12">
     <div class="glass p-8 md:p-12">
       <div class="grid md:grid-cols-2 gap-12">
         <!-- Contact Information -->
         <div>
           <h3 class="text-xl font-display font-bold mb-6 gradient-text">
-            Informacion de Contacto
+            <span class="lang-es">Informacion de Contacto</span>
+            <span class="lang-en hidden">Contact Information</span>
           </h3>
 
           <div class="space-y-4">
@@ -21,7 +22,10 @@ import { personal } from '../../data/personal';
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-slate-500 dark:text-slate-400">Telefono</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  <span class="lang-es">Telefono</span>
+                  <span class="lang-en hidden">Phone</span>
+                </p>
                 <p class="font-medium text-slate-800 dark:text-white">{personal.phones.join(' - ')}</p>
               </div>
             </div>
@@ -48,7 +52,8 @@ import { personal } from '../../data/personal';
         <!-- Social Links -->
         <div>
           <h3 class="text-xl font-display font-bold mb-6 gradient-text">
-            Sigueme
+            <span class="lang-es">Sigueme</span>
+            <span class="lang-en hidden">Follow Me</span>
           </h3>
 
           <div class="flex flex-wrap gap-4">
@@ -87,18 +92,41 @@ import { personal } from '../../data/personal';
 
       <!-- Bottom Bar -->
       <div class="mt-12 pt-8 border-t border-slate-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <a href="/" class="flex items-center gap-3">
-          <img
-            src="/images/logo/logoAngel.png"
-            alt="Angel Archbold Logo"
-            class="h-8 w-auto"
-          />
+        <a href="/" class="flex items-center group">
+          <span class="text-lg font-display font-bold text-slate-900 dark:text-white transition-colors group-hover:text-primary-500">
+            Angel<span class="gradient-text">Archbold</span>
+          </span>
         </a>
 
         <p class="text-sm text-slate-500 dark:text-slate-400 text-center">
-          &copy; {new Date().getFullYear()} Angel Archbold. Todos los derechos reservados.
+          <span class="lang-es">&copy; {new Date().getFullYear()} Angel Archbold. Todos los derechos reservados.</span>
+          <span class="lang-en hidden">&copy; {new Date().getFullYear()} Angel Archbold. All rights reserved.</span>
         </p>
       </div>
     </div>
   </div>
 </footer>
+
+<script>
+  // Language switching for footer
+  function updateFooterLanguage(lang: 'es' | 'en') {
+    const footer = document.getElementById('footer');
+    if (!footer) return;
+
+    footer.querySelectorAll('.lang-es').forEach(el => {
+      el.classList.toggle('hidden', lang !== 'es');
+    });
+    footer.querySelectorAll('.lang-en').forEach(el => {
+      el.classList.toggle('hidden', lang !== 'en');
+    });
+  }
+
+  // Listen for language changes
+  window.addEventListener('language-change', ((e: CustomEvent) => {
+    updateFooterLanguage(e.detail.language);
+  }) as EventListener);
+
+  // Initialize with saved language
+  const savedLang = localStorage.getItem('language') as 'es' | 'en' || 'es';
+  updateFooterLanguage(savedLang);
+</script>

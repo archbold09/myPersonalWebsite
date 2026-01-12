@@ -15,19 +15,11 @@ export const skills: Skill[] = [
   },
   {
     name: 'React',
-    category: 'backend',
+    category: 'frontend',
     icon: 'react',
     iconUrl: `${DEVICON_BASE}/react/react-original.svg`,
     color: '#61DAFB',
     level: 90
-  },
-  {
-    name: 'NestJS',
-    category: 'backend',
-    icon: 'nestjs',
-    iconUrl: `${DEVICON_BASE}/nestjs/nestjs-original.svg`,
-    color: '#E0234E',
-    level: 85
   },
   {
     name: 'TypeScript',
@@ -44,14 +36,6 @@ export const skills: Skill[] = [
     iconUrl: `${DEVICON_BASE}/go/go-original-wordmark.svg`,
     color: '#00ADD8',
     level: 75
-  },
-  {
-    name: 'Express',
-    category: 'backend',
-    icon: 'express',
-    iconUrl: `${DEVICON_BASE}/express/express-original.svg`,
-    color: '#000000',
-    level: 90
   },
   {
     name: 'Python',
@@ -218,14 +202,6 @@ export const skills: Skill[] = [
     iconUrl: `${DEVICON_BASE}/graphql/graphql-plain.svg`,
     color: '#E10098',
     level: 80
-  },
-  {
-    name: 'Jest',
-    category: 'tools',
-    icon: 'jest',
-    iconUrl: `${DEVICON_BASE}/jest/jest-plain.svg`,
-    color: '#C21325',
-    level: 85
   }
 ];
 
