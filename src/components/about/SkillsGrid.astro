@@ -18,20 +18,30 @@ import type { Skill } from '../../types';
         <div class="flex flex-wrap justify-center gap-4">
           {categorySkills.map((skill) => (
             <div
-              class="glass p-4 card-hover group w-20 h-20 flex items-center justify-center rounded-xl transition-all duration-300"
+              class="glass p-3 card-hover group flex flex-col items-center justify-center rounded-xl transition-all duration-300 min-w-[80px]"
               style={`border-color: ${skill.color}40;`}
               title={skill.name}
             >
-              <div class="flex flex-col items-center">
-                <div
-                  class="w-12 h-12 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110"
-                  style={`background: linear-gradient(135deg, ${skill.color}20, ${skill.color}10); border: 1px solid ${skill.color}30;`}
-                >
+              <div
+                class="w-12 h-12 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 mb-2"
+                style={`background: linear-gradient(135deg, ${skill.color}15, transparent);`}
+              >
+                {skill.iconUrl ? (
+                  <img
+                    src={skill.iconUrl}
+                    alt={skill.name}
+                    class="w-8 h-8 object-contain"
+                    loading="lazy"
+                  />
+                ) : (
                   <span class="text-xl font-bold" style={`color: ${skill.color};`}>
                     {skill.name.substring(0, 2).toUpperCase()}
                   </span>
-                </div>
+                )}
               </div>
+              <span class="text-xs text-slate-600 dark:text-slate-400 text-center font-medium">
+                {skill.name}
+              </span>
             </div>
           ))}
         </div>
