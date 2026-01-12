@@ -96,10 +96,10 @@ export const translations: Record<Language, Translations> = {
   es: {
     nav: {
       home: 'Inicio',
-      about: 'Sobre Mi',
+      about: 'Sobre Mí',
       experience: 'Experiencia',
       skills: 'Skills',
-      methodology: 'Metodologia',
+      methodology: 'Metodología',
       contact: 'Contacto',
     },
     hero: {
@@ -109,20 +109,20 @@ export const translations: Record<Language, Translations> = {
       descriptionHighlight1: 'Fullstack JavaScript',
       descriptionHighlight2: '6+ años de experiencia',
       descriptionHighlight3: 'desarrollo web, servicios cloud y ciencia de datos',
-      cta: 'Conocer mas',
+      cta: 'Conocer más',
       stats: {
         years: 'años de exp.',
         projects: 'Proyectos',
-        technologies: 'Tecnologias',
+        technologies: 'Tecnologías',
       },
     },
     about: {
       title: 'Sobre',
       subtitle: 'Conoce mi trayectoria profesional y experiencia.',
       description: `Especializado en desarrollo web, servicios cloud y ciencia de datos.
-        Amplia experiencia en el desarrollo de software a medida para grandes y pequenas empresas.
-        Areas de experiencia: marketing relacional, educacion, servicios publicos, ecommerce, contabilidad.
-        Apasionado por la tecnologia, los videojuegos y el gym.`,
+        Amplia experiencia en el desarrollo de software a medida para grandes y pequeñas empresas.
+        Áreas de experiencia: marketing relacional, educación, servicios públicos, ecommerce, contabilidad.
+        Apasionado por la tecnología, los videojuegos y el gym.`,
     },
     experience: {
       title: 'Experiencia',
@@ -130,7 +130,7 @@ export const translations: Record<Language, Translations> = {
     },
     education: {
       title: 'Estudios',
-      subtitle: 'Mi formacion academica y aprendizaje continuo.',
+      subtitle: 'Mi formación académica y aprendizaje continuo.',
     },
     skills: {
       title: 'Conocimientos de',
@@ -146,32 +146,32 @@ export const translations: Record<Language, Translations> = {
       title: 'Mi',
       subtitle: 'Un proceso estructurado para convertir ideas en productos digitales exitosos.',
       iterativeTitle: 'Un Proceso',
-      iterativeSubtitle: 'Mi metodologia es flexible y se adapta a las necesidades de cada proyecto.',
-      communication: 'Comunicacion Constante',
+      iterativeSubtitle: 'Mi metodología es flexible y se adapta a las necesidades de cada proyecto.',
+      communication: 'Comunicación Constante',
       communicationDesc: 'Mantente informado del progreso en cada etapa del desarrollo.',
-      iterations: 'Iteraciones Rapidas',
+      iterations: 'Iteraciones Rápidas',
       iterationsDesc: 'Entregas frecuentes para que puedas ver el progreso y dar feedback.',
       quality: 'Calidad Garantizada',
-      qualityDesc: 'Testing riguroso antes de cada entrega para asegurar un producto solido.',
+      qualityDesc: 'Testing riguroso antes de cada entrega para asegurar un producto sólido.',
       steps: {
         idea: { title: 'Idea', description: 'Definimos juntos el concepto y objetivos del proyecto.' },
-        planning: { title: 'Planificacion', description: 'Estructuramos el alcance, tecnologias y cronograma.' },
-        design: { title: 'Diseno', description: 'Creamos wireframes y prototipos de la interfaz.' },
-        development: { title: 'Desarrollo', description: 'Implementamos el codigo con las mejores practicas.' },
+        planning: { title: 'Planificación', description: 'Estructuramos el alcance, tecnologías y cronograma.' },
+        design: { title: 'Diseño', description: 'Creamos wireframes y prototipos de la interfaz.' },
+        development: { title: 'Desarrollo', description: 'Implementamos el código con las mejores prácticas.' },
         testing: { title: 'Testing', description: 'Probamos exhaustivamente para garantizar calidad.' },
-        deployment: { title: 'Despliegue', description: 'Publicamos y configuramos el proyecto en produccion.' },
+        deployment: { title: 'Despliegue', description: 'Publicamos y configuramos el proyecto en producción.' },
       },
     },
     contact: {
       title: 'Trabajemos',
-      subtitle: 'Estoy disponible para proyectos freelance y oportunidades de trabajo. Contactame para discutir tu proximo proyecto.',
+      subtitle: 'Estoy disponible para proyectos freelance y oportunidades de trabajo. Contáctame para discutir tu próximo proyecto.',
       email: 'Enviar Email',
-      phone: 'Telefono',
-      followMe: 'Sigueme',
+      phone: 'Teléfono',
+      followMe: 'Sígueme',
     },
     footer: {
       rights: 'Todos los derechos reservados.',
-      contactInfo: 'Informacion de Contacto',
+      contactInfo: 'Información de Contacto',
     },
     common: {
       present: 'Presente',
