@@ -8,9 +8,10 @@
   aria-label="Toggle theme"
   title="Toggle dark/light mode"
 >
-  <!-- Sun icon (shown in dark mode) -->
+  <!-- Sun icon (shown in dark mode - click to go light) -->
   <svg
-    class="w-5 h-5 text-yellow-400 hidden dark:block group-hover:rotate-12 transition-transform"
+    id="sun-icon"
+    class="w-5 h-5 text-yellow-400 group-hover:rotate-12 transition-transform"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -23,9 +24,10 @@
     />
   </svg>
 
-  <!-- Moon icon (shown in light mode) -->
+  <!-- Moon icon (shown in light mode - click to go dark) -->
   <svg
-    class="w-5 h-5 text-primary-500 block dark:hidden group-hover:-rotate-12 transition-transform"
+    id="moon-icon"
+    class="w-5 h-5 text-slate-700 group-hover:-rotate-12 transition-transform hidden"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -40,9 +42,39 @@
 </button>
 
 <script>
-  const themeToggle = document.getElementById('theme-toggle');
+  function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
 
-  themeToggle?.addEventListener('click', () => {
-    window.dispatchEvent(new CustomEvent('theme-toggle'));
-  });
+    function updateIcons() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (sunIcon && moonIcon) {
+        // In dark mode: show sun (to switch to light)
+        // In light mode: show moon (to switch to dark)
+        sunIcon.classList.toggle('hidden', !isDark);
+        moonIcon.classList.toggle('hidden', isDark);
+      }
+    }
+
+    // Initial update
+    updateIcons();
+
+    themeToggle?.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('theme-toggle'));
+      // Update icons after theme change
+      setTimeout(updateIcons, 50);
+    });
+
+    // Listen for theme changes from other sources
+    window.addEventListener('theme-toggle', () => {
+      setTimeout(updateIcons, 50);
+    });
+  }
+
+  // Run on page load
+  initThemeToggle();
+
+  // Re-run on Astro page transitions
+  document.addEventListener('astro:page-load', initThemeToggle);
 </script>
