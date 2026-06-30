@@ -2,12 +2,12 @@
 // Animated background with floating gradient orbs - Emerald/Teal theme
 ---
 
-<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none animated-bg">
   <!-- Base gradient - Light mode -->
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 block dark:hidden"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 bg-light"></div>
 
   <!-- Base gradient - Dark mode -->
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 hidden dark:block"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 bg-dark"></div>
 
   <!-- Floating orbs - Emerald/Teal colors -->
   <div
@@ -37,14 +37,32 @@
 
   <!-- Grid pattern overlay -->
   <div
-    class="absolute inset-0 opacity-[0.02] dark:opacity-[0.02]"
+    class="absolute inset-0 opacity-[0.02] grid-pattern"
     style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
   ></div>
 </div>
 
 <style>
-  /* Light mode background adjustments */
-  :global(.light) .orb {
+  /* Dark mode - default */
+  :global(html.dark) .bg-light {
+    display: none;
+  }
+  :global(html.dark) .bg-dark {
+    display: block;
+  }
+
+  /* Light mode */
+  :global(html.light) .bg-light {
+    display: block;
+  }
+  :global(html.light) .bg-dark {
+    display: none;
+  }
+  :global(html.light) .orb {
     opacity: 0.12;
+  }
+  :global(html.light) .grid-pattern {
+    opacity: 0.03;
+    filter: invert(1);
   }
 </style>
