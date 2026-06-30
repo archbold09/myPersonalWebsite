@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@astroanimate/core':
+        specifier: ^0.1.2
+        version: 0.1.2(astro@5.18.2(@types/node@24.13.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.2)(typescript@5.9.3))
       '@astrojs/sitemap':
         specifier: ^3.6.1
         version: 3.7.3
@@ -31,6 +34,11 @@ importers:
         version: 4.3.1
 
 packages:
+
+  '@astroanimate/core@0.1.2':
+    resolution: {integrity: sha512-cu1ytAp8ZPelcxnZlRavNfNrLn60DoQSUBqUzWLJr9b5n5gP/prNNb5MuH7LWK+Y5i2SZF31ptjfJroTy6il/A==}
+    peerDependencies:
+      astro: ^4.0.0 || ^5.0.0 || ^6.0.0
 
   '@astrojs/compiler@2.13.1':
     resolution: {integrity: sha512-f3FN83d2G/v32ipNClRKgYv30onQlMZX1vCeZMjPsMMPl1mDpmbl0+N5BYo4S/ofzqJyS5hvwacEo0CCVDn/Qg==}
@@ -1923,6 +1931,10 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@astroanimate/core@0.1.2(astro@5.18.2(@types/node@24.13.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.2)(typescript@5.9.3))':
+    dependencies:
+      astro: 5.18.2(@types/node@24.13.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.2)(typescript@5.9.3)
 
   '@astrojs/compiler@2.13.1': {}
 

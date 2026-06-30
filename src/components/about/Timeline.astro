@@ -1,5 +1,7 @@
 ---
 import type { Experience, Education } from '../../types';
+import FadeInText from '@astroanimate/core/FadeInText';
+import ScaleIn from '@astroanimate/core/ScaleIn';
 
 interface Props {
   items: (Experience | Education)[];
@@ -22,31 +24,55 @@ function isExperience(item: Experience | Education): item is Experience {
     {items.map((item, index) => (
       <div class={`relative flex items-start gap-6 md:gap-0 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
         <!-- Timeline dot -->
-        <div class="absolute left-4 md:left-1/2 w-4 h-4 -translate-x-1/2 rounded-full bg-primary-500 ring-4 ring-white dark:ring-slate-950 z-10"></div>
+        <ScaleIn enhance initialScale={0} duration="400ms">
+          <div class="absolute left-4 md:left-1/2 w-4 h-4 -translate-x-1/2 rounded-full bg-primary-500 ring-4 ring-white dark:ring-slate-950 z-10 timeline-dot"></div>
+        </ScaleIn>
 
         <!-- Content -->
         <div class={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-          <div class="glass p-6 card-hover">
-            <span class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary-500/20 text-primary-600 dark:text-primary-400 mb-3">
-              {isExperience(item) ? item.period : item.period}
-            </span>
+          <FadeInText enhance duration={0.6} yOffset={30}>
+            <div class="glass p-6 card-hover timeline-card">
+              <span class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary-500/20 text-primary-600 dark:text-primary-400 mb-3">
+                {isExperience(item) ? item.period : item.period}
+              </span>
 
-            <h3 class="text-lg font-semibold mb-1 text-slate-900 dark:text-white">
-              {isExperience(item) ? item.role : item.degree}
-            </h3>
+              <h3 class="text-lg font-semibold mb-1 text-slate-900 dark:text-white">
+                {isExperience(item) ? item.role : item.degree}
+              </h3>
 
-            <p class="text-primary-600 dark:text-primary-400 text-sm mb-2">
-              {isExperience(item) ? item.company : item.institution}
-            </p>
-
-            {isExperience(item) && item.description && (
-              <p class="text-slate-600 dark:text-slate-400 text-sm">
-                {item.description}
+              <p class="text-primary-600 dark:text-primary-400 text-sm mb-2">
+                {isExperience(item) ? item.company : item.institution}
               </p>
-            )}
-          </div>
+
+              {isExperience(item) && item.description && (
+                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                  {item.description}
+                </p>
+              )}
+            </div>
+          </FadeInText>
         </div>
       </div>
     ))}
   </div>
 </div>
+
+<style>
+  .timeline-card {
+    transition: all 0.3s ease;
+  }
+
+  .timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 197, 142, 0.15);
+  }
+
+  .timeline-dot {
+    transition: transform 0.3s ease;
+  }
+
+  .timeline-card:hover ~ .timeline-dot,
+  .timeline-dot:hover {
+    transform: scale(1.3) translateX(-50%);
+  }
+</style>

@@ -7,6 +7,9 @@ import Timeline from '../components/about/Timeline.astro';
 import SkillsGrid from '../components/about/SkillsGrid.astro';
 import { experiences, education } from '../data/experience';
 import { methodologySteps } from '../data/methodology';
+import FadeInText from '@astroanimate/core/FadeInText';
+import ScaleIn from '@astroanimate/core/ScaleIn';
+import HighlightText from '@astroanimate/core/HighlightText';
 ---
 
 <BaseLayout title="Angel Archbold - Software Developer">
@@ -16,44 +19,50 @@ import { methodologySteps } from '../data/methodology';
   <!-- About Section -->
   <section id="about" class="py-20">
     <div class="section-container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-          <span class="lang-es">Sobre</span>
-          <span class="lang-en hidden">About</span>
-          <span class="gradient-text">
-            <span class="lang-es">Mi</span>
-            <span class="lang-en hidden">Me</span>
-          </span>
-        </h2>
-        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          <span class="lang-es">Conoce mi trayectoria profesional y experiencia.</span>
-          <span class="lang-en hidden">Learn about my professional journey and experience.</span>
-        </p>
-      </div>
+      <FadeInText enhance duration={0.6} yOffset={30}>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+            <span class="lang-es">Sobre</span>
+            <span class="lang-en hidden">About</span>
+            <span class="gradient-text">
+              <span class="lang-es">Mi</span>
+              <span class="lang-en hidden">Me</span>
+            </span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <span class="lang-es">Conoce mi trayectoria profesional y experiencia.</span>
+            <span class="lang-en hidden">Learn about my professional journey and experience.</span>
+          </p>
+        </div>
+      </FadeInText>
 
-      <div class="max-w-3xl mx-auto">
-        <ProfileCard />
-      </div>
+      <ScaleIn enhance initialScale={0.95} duration="600ms">
+        <div class="max-w-3xl mx-auto">
+          <ProfileCard />
+        </div>
+      </ScaleIn>
     </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience" class="py-20">
     <div class="section-container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-          <span class="lang-es">Experiencia</span>
-          <span class="lang-en hidden">Work</span>
-          <span class="gradient-text">
-            <span class="lang-es">Laboral</span>
-            <span class="lang-en hidden">Experience</span>
-          </span>
-        </h2>
-        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          <span class="lang-es">Mi recorrido profesional en el desarrollo de software.</span>
-          <span class="lang-en hidden">My professional journey in software development.</span>
-        </p>
-      </div>
+      <FadeInText enhance duration={0.6} yOffset={30}>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+            <span class="lang-es">Experiencia</span>
+            <span class="lang-en hidden">Work</span>
+            <span class="gradient-text">
+              <span class="lang-es">Laboral</span>
+              <span class="lang-en hidden">Experience</span>
+            </span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <span class="lang-es">Mi recorrido profesional en el desarrollo de software.</span>
+            <span class="lang-en hidden">My professional journey in software development.</span>
+          </p>
+        </div>
+      </FadeInText>
 
       <div class="max-w-4xl mx-auto">
         <Timeline items={experiences} type="experience" />
@@ -64,18 +73,20 @@ import { methodologySteps } from '../data/methodology';
   <!-- Education Section -->
   <section id="education" class="py-20">
     <div class="section-container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-          <span class="gradient-text">
-            <span class="lang-es">Estudios</span>
-            <span class="lang-en hidden">Education</span>
-          </span>
-        </h2>
-        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          <span class="lang-es">Mi formacion academica y aprendizaje continuo.</span>
-          <span class="lang-en hidden">My academic background and continuous learning.</span>
-        </p>
-      </div>
+      <FadeInText enhance duration={0.6} yOffset={30}>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+            <span class="gradient-text">
+              <span class="lang-es">Estudios</span>
+              <span class="lang-en hidden">Education</span>
+            </span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <span class="lang-es">Mi formacion academica y aprendizaje continuo.</span>
+            <span class="lang-en hidden">My academic background and continuous learning.</span>
+          </p>
+        </div>
+      </FadeInText>
 
       <div class="max-w-4xl mx-auto">
         <Timeline items={education} type="education" />
@@ -86,20 +97,22 @@ import { methodologySteps } from '../data/methodology';
   <!-- Skills Section -->
   <section id="skills" class="py-20">
     <div class="section-container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-          <span class="lang-es">Conocimientos de</span>
-          <span class="lang-en hidden">Programming</span>
-          <span class="gradient-text">
-            <span class="lang-es">Programacion</span>
-            <span class="lang-en hidden">Skills</span>
-          </span>
-        </h2>
-        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          <span class="lang-es">Lenguajes, frameworks, bases de datos y herramientas que domino.</span>
-          <span class="lang-en hidden">Languages, frameworks, databases and tools I master.</span>
-        </p>
-      </div>
+      <FadeInText enhance duration={0.6} yOffset={30}>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+            <span class="lang-es">Conocimientos de</span>
+            <span class="lang-en hidden">Programming</span>
+            <span class="gradient-text">
+              <span class="lang-es">Programacion</span>
+              <span class="lang-en hidden">Skills</span>
+            </span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <span class="lang-es">Lenguajes, frameworks, bases de datos y herramientas que domino.</span>
+            <span class="lang-en hidden">Languages, frameworks, databases and tools I master.</span>
+          </p>
+        </div>
+      </FadeInText>
 
       <SkillsGrid />
     </div>
@@ -108,43 +121,108 @@ import { methodologySteps } from '../data/methodology';
   <!-- CTA Section -->
   <section id="contact" class="py-20">
     <div class="section-container">
-      <GlassCard class="text-center" padding="lg">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
-          <span class="lang-es">Trabajemos</span>
-          <span class="lang-en hidden">Let's Work</span>
-          <span class="gradient-text">
-            <span class="lang-es">Juntos</span>
-            <span class="lang-en hidden">Together</span>
-          </span>
-        </h2>
-        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
-          <span class="lang-es">Estoy disponible para proyectos freelance y oportunidades de trabajo. Contáctame para discutir tu próximo proyecto.</span>
-          <span class="lang-en hidden">I'm available for freelance projects and job opportunities. Contact me to discuss your next project.</span>
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <!-- <a href="mailto:angelarchbold09@gmail.com" class="btn-primary inline-flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <span class="lang-es">Enviar Email</span>
-            <span class="lang-en hidden">Send Email</span>
-          </a> -->
-          <a
-            href="https://www.linkedin.com/in/archbold09/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-glass inline-flex items-center justify-center gap-2"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-            LinkedIn
-          </a>
-        </div>
-      </GlassCard>
+      <ScaleIn enhance initialScale={0.9} duration="700ms">
+        <GlassCard class="text-center cta-card" padding="lg">
+          <FadeInText enhance duration={0.5} yOffset={25}>
+            <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white">
+              <span class="lang-es">Trabajemos</span>
+              <span class="lang-en hidden">Let's Work</span>
+              <HighlightText color="#00c58e" trigger="load" duration="800ms" variant="underline">
+                <span class="gradient-text">
+                  <span class="lang-es">Juntos</span>
+                  <span class="lang-en hidden">Together</span>
+                </span>
+              </HighlightText>
+            </h2>
+          </FadeInText>
+
+          <FadeInText enhance duration={0.5} delay={0.2} yOffset={20}>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
+              <span class="lang-es">Estoy disponible para proyectos freelance y oportunidades de trabajo. Contáctame para discutir tu próximo proyecto.</span>
+              <span class="lang-en hidden">I'm available for freelance projects and job opportunities. Contact me to discuss your next project.</span>
+            </p>
+          </FadeInText>
+
+          <ScaleIn enhance initialScale={0.9} duration="500ms">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://www.linkedin.com/in/archbold09/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-glass inline-flex items-center justify-center gap-2 cta-button"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+          </ScaleIn>
+        </GlassCard>
+      </ScaleIn>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .cta-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      rgba(0, 197, 142, 0.1),
+      transparent,
+      rgba(20, 184, 166, 0.1),
+      transparent
+    );
+    animation: rotate-gradient 8s linear infinite;
+  }
+
+  @keyframes rotate-gradient {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .cta-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 197, 142, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+
+  .cta-button:hover::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 197, 142, 0.3);
+  }
+</style>
 
 <script>
   // Language switching for content
