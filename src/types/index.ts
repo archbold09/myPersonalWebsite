@@ -3,7 +3,9 @@ export interface PersonalInfo {
   name: string;
   fullName: string;
   title: string;
+  titleEs?: string;
   description: string;
+  descriptionEs?: string;
   emails: string[];
   phones: string[];
   social: SocialLinks;
@@ -25,8 +27,11 @@ export interface Experience {
   id: string;
   company: string;
   role: string;
+  roleEs?: string;
   description: string;
+  descriptionEs?: string;
   period: string;
+  periodEs?: string;
   year: string;
   type: 'work' | 'freelance' | 'education';
 }
@@ -35,7 +40,9 @@ export interface Education {
   id: string;
   institution: string;
   degree: string;
+  degreeEs?: string;
   period: string;
+  periodEs?: string;
   year: string;
 }
 

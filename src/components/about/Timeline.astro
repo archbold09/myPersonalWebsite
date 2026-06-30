@@ -33,11 +33,13 @@ function isExperience(item: Experience | Education): item is Experience {
           <FadeInText enhance duration={0.6} yOffset={30}>
             <div class="glass p-6 card-hover timeline-card">
               <span class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary-500/20 text-primary-600 dark:text-primary-400 mb-3">
-                {isExperience(item) ? item.period : item.period}
+                <span class="lang-es">{isExperience(item) ? (item.periodEs || item.period) : (item.periodEs || item.period)}</span>
+                <span class="lang-en hidden">{isExperience(item) ? item.period : item.period}</span>
               </span>
 
               <h3 class="text-lg font-semibold mb-1 text-slate-900 dark:text-white">
-                {isExperience(item) ? item.role : item.degree}
+                <span class="lang-es">{isExperience(item) ? (item.roleEs || item.role) : (item.degreeEs || item.degree)}</span>
+                <span class="lang-en hidden">{isExperience(item) ? item.role : item.degree}</span>
               </h3>
 
               <p class="text-primary-600 dark:text-primary-400 text-sm mb-2">
@@ -46,7 +48,8 @@ function isExperience(item: Experience | Education): item is Experience {
 
               {isExperience(item) && item.description && (
                 <p class="text-slate-600 dark:text-slate-400 text-sm">
-                  {item.description}
+                  <span class="lang-es">{item.descriptionEs || item.description}</span>
+                  <span class="lang-en hidden">{item.description}</span>
                 </p>
               )}
             </div>

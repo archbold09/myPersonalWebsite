@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Pagina no encontrada">
+<BaseLayout title="404">
   <section class="min-h-[60vh] flex items-center justify-center">
     <div class="section-container text-center">
       <div class="glass p-12 max-w-2xl mx-auto">
@@ -12,11 +12,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <h1 class="text-2xl sm:text-3xl font-display font-bold mb-4">
-          Pagina no <span class="gradient-text">encontrada</span>
+          <span class="lang-es">Página no <span class="gradient-text">encontrada</span></span>
+          <span class="lang-en">Page <span class="gradient-text">not found</span></span>
         </h1>
 
         <p class="text-slate-400 mb-8">
-          Lo siento, la pagina que buscas no existe o ha sido movida.
+          <span class="lang-es">Lo siento, la página que buscas no existe o ha sido movida.</span>
+          <span class="lang-en">Sorry, the page you are looking for does not exist or has been moved.</span>
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -24,10 +26,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
             </svg>
-            Ir al Inicio
+            <span class="lang-es">Ir al Inicio</span>
+            <span class="lang-en">Go Home</span>
           </a>
           <a href="/projects" class="btn-glass inline-flex items-center justify-center gap-2">
-            Ver Proyectos
+            <span class="lang-es">Ver Proyectos</span>
+            <span class="lang-en">View Projects</span>
           </a>
         </div>
       </div>

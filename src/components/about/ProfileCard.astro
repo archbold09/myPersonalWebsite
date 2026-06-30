@@ -29,14 +29,16 @@ import ScaleIn from '@astroanimate/core/ScaleIn';
 
   <FadeInText enhance duration={0.5} delay={0.1} yOffset={15}>
     <p class="text-xl text-primary-600 dark:text-primary-400 font-medium mb-4">
-      {personal.title}
+      <span class="lang-es">{personal.titleEs}</span>
+      <span class="lang-en hidden">{personal.title}</span>
     </p>
   </FadeInText>
 
   <!-- Description -->
   <FadeInText enhance duration={0.6} delay={0.2} yOffset={20}>
     <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto mb-6 leading-relaxed">
-      {personal.description}
+      <span class="lang-es">{personal.descriptionEs}</span>
+      <span class="lang-en hidden">{personal.description}</span>
     </p>
   </FadeInText>
 
