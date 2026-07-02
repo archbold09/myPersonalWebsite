@@ -22,6 +22,15 @@ export interface SocialLinks {
   website?: string;
 }
 
+// Career progression within a single company
+export interface CareerProgression {
+  role: string;
+  roleEs?: string;
+  period: string;
+  periodEs?: string;
+  current?: boolean;
+}
+
 // Experience and education types
 export interface Experience {
   id: string;
@@ -34,6 +43,8 @@ export interface Experience {
   periodEs?: string;
   year: string;
   type: 'work' | 'freelance' | 'education';
+  technologies?: string[];
+  progression?: CareerProgression[];
 }
 
 export interface Education {

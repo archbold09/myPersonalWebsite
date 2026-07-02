@@ -3,15 +3,13 @@
 ---
 
 <button
-  id="theme-toggle"
-  class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-300 group"
+  class="theme-toggle-btn p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-300 group"
   aria-label="Toggle theme"
   title="Toggle dark/light mode"
 >
   <!-- Sun icon (shown in dark mode - click to go light) -->
   <svg
-    id="sun-icon"
-    class="w-5 h-5 text-yellow-400 group-hover:rotate-12 transition-transform"
+    class="sun-icon w-5 h-5 text-yellow-400 group-hover:rotate-12 transition-transform"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -26,8 +24,7 @@
 
   <!-- Moon icon (shown in light mode - click to go dark) -->
   <svg
-    id="moon-icon"
-    class="w-5 h-5 text-slate-700 group-hover:-rotate-12 transition-transform hidden"
+    class="moon-icon w-5 h-5 text-slate-700 group-hover:-rotate-12 transition-transform hidden"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -42,39 +39,44 @@
 </button>
 
 <script>
-  function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
+  function initThemeToggles() {
+    const themeToggles = document.querySelectorAll('.theme-toggle-btn');
+    const sunIcons = document.querySelectorAll('.sun-icon');
+    const moonIcons = document.querySelectorAll('.moon-icon');
 
-    function updateIcons() {
+    function updateAllIcons() {
       const isDark = document.documentElement.classList.contains('dark');
-      if (sunIcon && moonIcon) {
-        // In dark mode: show sun (to switch to light)
-        // In light mode: show moon (to switch to dark)
-        sunIcon.classList.toggle('hidden', !isDark);
-        moonIcon.classList.toggle('hidden', isDark);
-      }
+      // Update all sun icons
+      sunIcons.forEach(icon => {
+        icon.classList.toggle('hidden', !isDark);
+      });
+      // Update all moon icons
+      moonIcons.forEach(icon => {
+        icon.classList.toggle('hidden', isDark);
+      });
     }
 
     // Initial update
-    updateIcons();
+    updateAllIcons();
 
-    themeToggle?.addEventListener('click', () => {
-      window.dispatchEvent(new CustomEvent('theme-toggle'));
-      // Update icons after theme change
-      setTimeout(updateIcons, 50);
+    // Add click listeners to all toggle buttons
+    themeToggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.dispatchEvent(new CustomEvent('theme-toggle'));
+        // Update icons after theme change
+        setTimeout(updateAllIcons, 50);
+      });
     });
 
     // Listen for theme changes from other sources
-    window.addEventListener('theme-toggle', () => {
-      setTimeout(updateIcons, 50);
+    window.addEventListener('theme-changed', () => {
+      updateAllIcons();
     });
   }
 
   // Run on page load
-  initThemeToggle();
+  initThemeToggles();
 
   // Re-run on Astro page transitions
-  document.addEventListener('astro:page-load', initThemeToggle);
+  document.addEventListener('astro:page-load', initThemeToggles);
 </script>
